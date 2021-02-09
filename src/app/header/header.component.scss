@@ -24,11 +24,20 @@
         //background-color: chocolate;
         height: calc(100% - 25px);
         width: 100%;
+       
+        #nav-profile{
+            
+           // flex-direction: row;
+        }
         .tab-pane{
           // background-color: crimson;
             width:100%;
             height: 100%;
+           // display: flex;
+           // flex-direction: row;
             .home-content{
+                position: relative;
+                display: inline-block;
                 width:100px;
               //  background-color: chartreuse;
                 height:100%;
