@@ -8,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class MainComponent implements OnInit {
 
   constructor() { }
-
+  paint:Paint;
   ngOnInit(): void {
+    this.paint=new Paint();
     this.allAboutResizing();
 
   }
@@ -65,4 +66,9 @@ export class MainComponent implements OnInit {
       resizer.addEventListener('mousedown', mouseDownHandler);
     });
   }
+}
+class Paint{
+
+
+
 }
