@@ -1,48 +1,93 @@
-
 <nav>
-    <div class="nav nav-tabs" id="nav-tab" role="tablist">
-      <a class="nav-link " id="saveButton" href="#" ><img src="assets/save.png" alt=""></a>
-      <a class="nav-link active" id="nav-profile-tab" data-bs-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="true">Accueil</a>
-      <a class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Affichage</a>
-    </div>
-  </nav>
-  <div class="tab-content" id="nav-tabContent">
-    <!--div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <a class="nav-link " id="saveButton" href="#"><img src="assets/save.png" alt=""></a>
+    <a class="nav-link active" id="nav-profile-tab" data-bs-toggle="tab" href="#nav-profile" role="tab"
+      aria-controls="nav-profile" aria-selected="true">Accueil</a>
+    <a class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" href="#nav-contact" role="tab"
+      aria-controls="nav-contact" aria-selected="false">Affichage</a>
+  </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+  <!--div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
     </div-->
-    <div class="tab-pane fade  show active" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-      <div class="home-content tools">
-        <div class="content">
-          
-        </div>
-        <div class="title">Outils</div>
+  <div class="tab-pane fade  show active" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+    <div class="home-content tools">
+      <div class="content">
+
       </div>
-      <div class="home-content">
-        <div class="content">
-          
-        </div>
-        <div class="title">Forme</div>
-      </div>
-      <div class="home-content">
-        <div class="content">
-          
-        </div>
-        <div class="title">Couleurs</div>
-      </div> 
-     
-    
+      <div class="title">Outils</div>
     </div>
-    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-      <div class="home-content">
-        <div class="content">
-          
-        </div>
-        <div class="title">Zoom</div>
+    <div class="home-content">
+      <div class="content">
+
       </div>
-      <div class="home-content">
-        <div class="content">
-          
+      <div class="title">Forme</div>
+    </div>
+    <div class="home-content colors">
+      <div class="content">
+        <div class="colors-content">
+          <button type="button" value="#0000ff"></button>
+          <button type="button" value="#009fff"></button>
+          <button type="button" value="#0fffff"></button>
+          <button type="button" value="#bfffff"></button>
+          <button type="button" value="#000000"></button>
+          <button type="button" value="#333333"></button>
+          <button type="button" value="#666666"></button>
+          <button type="button" value="#999999"></button>
+          <button type="button" value="#ffcc66"></button>
+          <button type="button" value="#ffcc00"></button>
+          <button type="button" value="#ffff00"></button>
+          <button type="button" value="#ffff99"></button>
+          <button type="button" value="#003300"></button>
+          <button type="button" value="#555000"></button>
+          <button type="button" value="#00ff00"></button>
+          <button type="button" value="#99ff99"></button>
+          <button type="button" value="#f00000"></button>
+          <button type="button" value="#ff6600"></button>
+          <button type="button" value="#ff9933"></button>
+          <button type="button" value="#f5deb3"></button>
+          <button type="button" value="#330000"></button>
+          <button type="button" value="#663300"></button>
+          <button type="button" value="#cc6600"></button>
+          <button type="button" value="#deb887"></button>
+          <button type="button" value="#aa0fff"></button>
+          <button type="button" value="#cc66cc"></button>
+          <button type="button" value="#ff66ff"></button>
+          <button type="button" value="#ff99ff"></button>
+          <button type="button" value="#e8c4e8"></button>
+          <button type="button" value="#ffffff"></button>
         </div>
-        <div class="title">Afficher</div>
+        <div class="color-picker">
+          <input type="color" id="favcolor" name="favcolor" value="#ff0000">
+          <label for="favcolor">Modifier les couleurs</label>
+        </div>
+
       </div>
+      <div class="title">Couleurs</div>
+    </div>
+
+
+  </div>
+  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+    <div class="home-content zoom">
+      <div class="content">
+        <div class="zoom-img">
+          <img src="assets/zoom_in.png" alt="">
+          <p>Zoom avant</p>
+        </div>
+        <div class="zoom-img">
+          <img src="assets/zoom_out.png" alt="">
+          <p>Zoom arrière</p>
+        </div>
+
+      </div>
+      <div class="title">Zoom</div>
+    </div>
+    <div class="home-content">
+      <div class="content">
+
+      </div>
+      <div class="title">Afficher</div>
     </div>
   </div>
+</div>
