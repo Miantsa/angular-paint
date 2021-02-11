@@ -10,6 +10,7 @@ import { DataShareService } from '../data-share.service';
 export class HeaderComponent implements OnInit {
 
   constructor(private data: DataShareService) { }
+  @Output() saveImage=new EventEmitter();
   private lineWidth;
   currentColor:string='red';
   ngOnInit(): void {
@@ -24,5 +25,8 @@ export class HeaderComponent implements OnInit {
    // console.log(event.target.value)
    this.currentColor=event.target.value;
    this.data.changePencilColor(event.target.value);
+  }
+  saveImageEvent(){
+    this.saveImage.emit('save');
   }
 }

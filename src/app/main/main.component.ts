@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { timer } from 'rxjs';
 import { DataShareService } from '../data-share.service';
 
 @Component({
@@ -6,7 +7,7 @@ import { DataShareService } from '../data-share.service';
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss']
 })
-export class MainComponent implements OnInit {
+export class MainComponent implements OnInit,OnChanges {
   private canvas: any;
   private isDrawing: boolean = false;
   public ctx: any;
@@ -14,7 +15,34 @@ export class MainComponent implements OnInit {
   private mouseY: number = 0;
   private boundings;
   private strokeColor:string='black';
+  @Input() isSave: boolean;
+  @Output() saveImageFinish=new EventEmitter();
   constructor(private data:DataShareService) { }
+  ngOnChanges(changes: SimpleChanges): void {
+    //console.log("nisy niova")
+    console.log(changes)
+    for (const propName in changes) {
+      if (changes.hasOwnProperty(propName)) {
+        let change = changes[propName];
+        switch (propName) {
+          case 'isSave': {
+            this.doSomething(change.currentValue)
+          }
+        }
+      }
+    }
+  }
+  doSomething(currentValue: any) {
+    if(currentValue){
+      this.saveImageToFile();
+      setTimeout(()=>{
+        this.saveImageFinish.emit(true);
+
+      },1000);
+     
+    }
+  
+  }
    lineWidth;
   ngOnInit() {
     this.data.lineWidth.subscribe(dt=>this.lineWidth=dt);
@@ -23,6 +51,14 @@ export class MainComponent implements OnInit {
     this.canvas=document.getElementById('myCanvas');
     this.ctx = this.canvas.getContext("2d");
     this.startDrawing();
+  }
+  saveImageToFile(){
+    let imageName = prompt('Please enter image name');
+    let canvasDataURL = this.canvas.toDataURL();
+    let a = document.createElement('a');
+    a.href = canvasDataURL;
+    a.download = imageName || 'drawing';
+    a.click();
   }
   allAboutResizing() {
     const ele = document.getElementById('resizeMe');
@@ -111,6 +147,10 @@ export class MainComponent implements OnInit {
     console.log("X:"+ this.boundings.left + "//" + this.mouseX)
     console.log("Y:"+ this.boundings.top + "//" + this.mouseY)
   }
+  /*saveImageTreatment(){
+
+    console.log("raikitra ary ehh")
+  }*/
 }
 /*
  */

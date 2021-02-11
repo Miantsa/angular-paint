@@ -7,6 +7,7 @@ import Bootstrap from 'bootstrap/dist/js/bootstrap';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+  isSave:boolean=false;
   ngOnInit(): void {
     var triggerTabList = [].slice.call(document.querySelectorAll('#myTab a'))
 triggerTabList.forEach(function (triggerEl) {
@@ -19,4 +20,14 @@ triggerTabList.forEach(function (triggerEl) {
 })
   }
   title = 'paint';
+
+ saveImageTreatment(){
+   
+  this.isSave=true;
+    console.log("raikitra ary ehh")
+  }
+  saveRefresh(value){
+    if(value)
+    this.isSave=false;
+  }
 }

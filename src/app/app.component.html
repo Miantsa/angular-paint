@@ -1,3 +1,3 @@
-<app-header></app-header>
-<app-main></app-main>
+<app-header (saveImage)="saveImageTreatment()"></app-header>
+<app-main [isSave]="isSave" (saveImageFinish)="saveRefresh($event)"></app-main>
 <app-footer></app-footer>
