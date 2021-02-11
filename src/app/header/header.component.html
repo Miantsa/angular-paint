@@ -30,50 +30,54 @@
     </div>
     <div class="home-content brush-size">
       <div class="content">
-        <button type="button" value="1"></button>
-        <button type="button" value="2"></button>
-        <button type="button" value="3"></button>
-        <button type="button" value="4"></button>
-        <button type="button" value="5"></button>
+        <button type="button" value="1" (click)="changeLineWidth($event)"></button>
+        <button type="button" value="2"  (click)="changeLineWidth($event)"></button>
+        <button type="button" value="3"  (click)="changeLineWidth($event)"></button>
+        <button type="button" value="4"  (click)="changeLineWidth($event)"></button>
+        <button type="button" value="5"  (click)="changeLineWidth($event)"></button>
       </div>
-      <div class="title">taille</div>
+      <div class="title" >taille</div>
     </div>
     <div class="home-content colors">
       <div class="content">
+        <div class="current-color">
+          <button type="button" [value]="currentColor" [ngStyle]="{backgroundColor: currentColor}" ></button>
+          <p>Couleur</p>
+        </div>
         <div class="colors-content">
-          <button type="button" value="#0000ff"></button>
-          <button type="button" value="#009fff"></button>
-          <button type="button" value="#0fffff"></button>
-          <button type="button" value="#bfffff"></button>
-          <button type="button" value="#000000"></button>
-          <button type="button" value="#333333"></button>
-          <button type="button" value="#666666"></button>
-          <button type="button" value="#999999"></button>
-          <button type="button" value="#ffcc66"></button>
-          <button type="button" value="#ffcc00"></button>
-          <button type="button" value="#ffff00"></button>
-          <button type="button" value="#ffff99"></button>
-          <button type="button" value="#003300"></button>
-          <button type="button" value="#555000"></button>
-          <button type="button" value="#00ff00"></button>
-          <button type="button" value="#99ff99"></button>
-          <button type="button" value="#f00000"></button>
-          <button type="button" value="#ff6600"></button>
-          <button type="button" value="#ff9933"></button>
-          <button type="button" value="#f5deb3"></button>
-          <button type="button" value="#330000"></button>
-          <button type="button" value="#663300"></button>
-          <button type="button" value="#cc6600"></button>
-          <button type="button" value="#deb887"></button>
-          <button type="button" value="#aa0fff"></button>
-          <button type="button" value="#cc66cc"></button>
-          <button type="button" value="#ff66ff"></button>
-          <button type="button" value="#ff99ff"></button>
-          <button type="button" value="#e8c4e8"></button>
-          <button type="button" value="#ffffff"></button>
+          <button type="button" value="#0000ff" (click)="colorPick($event)"></button>
+          <button type="button" value="#009fff" (click)="colorPick($event)"></button>
+          <button type="button" value="#0fffff" (click)="colorPick($event)"></button>
+          <button type="button" value="#bfffff" (click)="colorPick($event)"></button>
+          <button type="button" value="#000000" (click)="colorPick($event)"></button>
+          <button type="button" value="#333333" (click)="colorPick($event)"></button>
+          <button type="button" value="#666666" (click)="colorPick($event)"></button>
+          <button type="button" value="#999999" (click)="colorPick($event)"></button>
+          <button type="button" value="#ffcc66" (click)="colorPick($event)"></button>
+          <button type="button" value="#ffcc00" (click)="colorPick($event)"></button>
+          <button type="button" value="#ffff00" (click)="colorPick($event)"></button>
+          <button type="button" value="#ffff99" (click)="colorPick($event)"></button>
+          <button type="button" value="#003300" (click)="colorPick($event)"></button>
+          <button type="button" value="#555000" (click)="colorPick($event)"></button>
+          <button type="button" value="#00ff00" (click)="colorPick($event)"></button>
+          <button type="button" value="#99ff99" (click)="colorPick($event)"></button>
+          <button type="button" value="#f00000" (click)="colorPick($event)"></button>
+          <button type="button" value="#ff6600" (click)="colorPick($event)"></button>
+          <button type="button" value="#ff9933" (click)="colorPick($event)"></button>
+          <button type="button" value="#f5deb3" (click)="colorPick($event)"></button>
+          <button type="button" value="#330000" (click)="colorPick($event)"></button>
+          <button type="button" value="#663300" (click)="colorPick($event)"></button>
+          <button type="button" value="#cc6600" (click)="colorPick($event)"></button>
+          <button type="button" value="#deb887" (click)="colorPick($event)"></button>
+          <button type="button" value="#aa0fff" (click)="colorPick($event)"></button>
+          <button type="button" value="#cc66cc" (click)="colorPick($event)"></button>
+          <button type="button" value="#ff66ff" (click)="colorPick($event)"></button>
+          <button type="button" value="#ff99ff" (click)="colorPick($event)"></button>
+          <button type="button" value="#e8c4e8" (click)="colorPick($event)"></button>
+          <button type="button" value="#ffffff" (click)="colorPick($event)"></button>
         </div>
         <div class="color-picker">
-          <input type="color" id="favcolor" name="favcolor" value="#ff0000">
+          <input type="color" id="favcolor" name="favcolor" value="#ff0000" (change)="colorPick($event)">
           <label for="favcolor">Modifier les couleurs</label>
         </div>
 

@@ -134,17 +134,52 @@
             }
 
             .colors {
-                width: 310px;
+                width: 420px;
 
                 .content {
                     display: flex;
-
+                    .current-color{
+                        margin-left: 5px;
+                        background-color: rgba(#34ade9, 0.1);
+                            border: 1px solid #34ade9;
+                        &:hover {
+                            background-color: rgba(#34ade9, 0.1);
+                            border: 1px solid #34ade9;
+                        }
+                        &:active {
+                            background-color: rgba(#34ade9, 0.1);
+                            border: 1px solid #34ade9;
+                        }
+                      //  background-color: blue;
+                        width:200px;
+                        height:100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        cursor: pointer;
+                       // margin-right: 5px;
+                        button{
+                            width:30px;
+                            height:30px;
+                            background-color: black;
+                            border:none;
+                            margin-bottom: 5px;
+                        }
+                        p{
+                           // margin-top: 5px;
+                            font-size: 12px;
+                            text-align: center;
+                            line-height: 1;
+                        }
+                    }
                     .color-picker {
                         cursor: pointer;
                         width: 200px;
                         //  background-color: red;
-                        flex-direction: column;
                         display: flex;
+                        flex-direction: column;
+                        
                         justify-content: center;
                         align-items: center;
                         margin-right: 5px;
@@ -157,6 +192,7 @@
                         input {
                             margin-top: 5px !important;
                             cursor: pointer;
+                            border:none;
                         }
 
                         label {
