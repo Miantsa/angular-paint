@@ -73,11 +73,16 @@
                     justify-content: center;
                     align-items: center;
                     align-content: center;
+                    .active{
+                        background-color: rgba(#34ade9, 0.1);
+                        border: 1px solid #34ade9;
+                    }
                     img{
                         width:25px;
                         height:25px;
                        // background-color: blue;
                         margin:2px;
+                        padding:2px;
                         cursor: pointer;
                         &:hover {
                             background-color: rgba(#34ade9, 0.1);

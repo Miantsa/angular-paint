@@ -8,14 +8,17 @@ import { DataShareService } from '../data-share.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  private lineWidth;
+  private toolOption:number=1;
+  public currentColor:string='red';
 
   constructor(private data: DataShareService) { }
   @Output() saveImage=new EventEmitter();
-  private lineWidth;
-  currentColor:string='red';
+  
   ngOnInit(): void {
     this.data.lineWidth.subscribe(dt=>this.lineWidth=dt);
     this.data.pencilColor.subscribe(dt=>this.currentColor=dt);
+    this.data.toolOption.subscribe(dt=>this.toolOption=dt);
   }
   changeLineWidth(event){
    // console.log(event.target.value);
@@ -28,5 +31,15 @@ export class HeaderComponent implements OnInit {
   }
   saveImageEvent(){
     this.saveImage.emit('save');
+  }
+  chooseTool(event){
+    let toolsOption = document.querySelectorAll('.tool-option');
+    toolsOption.forEach((item)=>{
+      console.log(item)
+      item.classList.remove('active')
+    });
+    event.target.classList.add('active')
+   this.data.changeToolOption(event.target.alt);
+  
   }
 }
