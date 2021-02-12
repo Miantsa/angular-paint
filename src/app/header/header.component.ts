@@ -42,4 +42,7 @@ export class HeaderComponent implements OnInit {
    this.data.changeToolOption(event.target.alt);
   
   }
+  noAction(){
+    alert('no event yet!');
+  }
 }

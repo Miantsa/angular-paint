@@ -15,19 +15,19 @@
       <div class="content">
         <img src="assets/pencil.png"  class="tool-option active" value="1" (click)="chooseTool($event)" alt="1">
         <img src="assets/fill_color.png"  class="tool-option" value="2" (click)="chooseTool($event)" alt="2">
-        <img src="assets/a.png"  class="tool-option" value="3" (click)="chooseTool($event)" alt="3">
+        <!--img src="assets/a.png"  class="tool-option" value="3" (click)="chooseTool($event)" alt="3"-->
         <img src="assets/eraser.png"  class="tool-option" value="4" (click)="chooseTool($event)" alt="4">
         <!--img src="assets/dropper.png" (click)="chooseTool($event)" class="tool-option" alt=""-->
         <!--img src="assets/search.png" alt=""-->
       </div>
       <div class="title">Outils</div>
     </div>
-    <div class="home-content">
+    <!--div class="home-content">
       <div class="content">
 
       </div>
       <div class="title">Forme</div>
-    </div>
+    </div-->
     <div class="home-content brush-size">
       <div class="content">
         <button type="button" value="1" (click)="changeLineWidth($event)"></button>
@@ -90,11 +90,11 @@
   <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
     <div class="home-content zoom">
       <div class="content">
-        <div class="zoom-img">
+        <div class="zoom-img" (click)="noAction()">
           <img src="assets/zoom_in.png" alt="">
           <p>Zoom avant</p>
         </div>
-        <div class="zoom-img">
+        <div class="zoom-img" (click)="noAction()">
           <img src="assets/zoom_out.png" alt="">
           <p>Zoom arrière</p>
         </div>
@@ -103,7 +103,7 @@
       <div class="title">Zoom</div>
     </div>
     <div class="home-content afficher">
-      <div class="content">
+      <div class="content" (click)="noAction()">
         <img src="assets/full_screen.png" alt="">
         <p>Plein écran</p>
       </div>

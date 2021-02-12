@@ -174,6 +174,7 @@ export class MainComponent implements OnInit, OnChanges {
             this.ctx.stroke();
           }
             this.canvas.style.cursor=" url('/assets/pencil.png') , default ";
+            break;
         }
         case "2":{
           this.canvas.style.cursor=" url('/assets/fill_color.png') , default ";
@@ -191,8 +192,7 @@ export class MainComponent implements OnInit, OnChanges {
           break;
         }
       }
-     
-      console.log(this.toolOption)
+
     });
     //mouseUp
     this.canvas.addEventListener('mouseup', (event) => {
@@ -211,9 +211,6 @@ export class MainComponent implements OnInit, OnChanges {
     this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
 
   }
-  changeCursor(){
-
-  }
+ 
 }
-/*
- */
+

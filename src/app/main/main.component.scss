@@ -2,7 +2,7 @@
     display: block;
     position: relative;
     width: 100%;
-    height: calc(100% - 140px);
+    height: calc(100% - 135px);
     background-color: #ccd5e5;
   // background-color: black;
     overflow-x:scroll;
@@ -15,6 +15,7 @@
         box-shadow: 2px 2px 10px 1px rgba(0, 0, 255, .2);
         width: 600px;
         height: 400px;
+      //  transform: scale(4) !important; 
       //  background-color: red;
         .resizer {
             /* All resizers are positioned absolutely inside the element */
@@ -43,10 +44,11 @@
             position: relative;
             width:calc(100% - 5px);
             height: calc(100% - 5px);
+           
            cursor: crosshair;
+           
              // cursor: url('/assets/pencil.png') , default;
-          //  cursor: alias;
-           // background-color: brown;
+        
         }
     }
 }
