@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import * as Bootstrap from 'bootstrap';
 import { DataShareService } from '../data-share.service';
 
 
@@ -9,40 +10,47 @@ import { DataShareService } from '../data-share.service';
 })
 export class HeaderComponent implements OnInit {
   private lineWidth;
-  private toolOption:number=1;
-  public currentColor:string='red';
+  private toolOption: number = 1;
+  public currentColor: string = 'red';
 
   constructor(private data: DataShareService) { }
-  @Output() saveImage=new EventEmitter();
-  
+  @Output() saveImage = new EventEmitter();
+
   ngOnInit(): void {
-    this.data.lineWidth.subscribe(dt=>this.lineWidth=dt);
-    this.data.pencilColor.subscribe(dt=>this.currentColor=dt);
-    this.data.toolOption.subscribe(dt=>this.toolOption=dt);
+    this.data.lineWidth.subscribe(dt => this.lineWidth = dt);
+    this.data.pencilColor.subscribe(dt => this.currentColor = dt);
+    this.data.toolOption.subscribe(dt => this.toolOption = dt);
+  //  this.toolTips();
   }
-  changeLineWidth(event){
-   // console.log(event.target.value);
+  changeLineWidth(event) {
+    // console.log(event.target.value);
     this.data.changeLineWidth(event.target.value);
   }
-  colorPick(event){
-   // console.log(event.target.value)
-   this.currentColor=event.target.value;
-   this.data.changePencilColor(event.target.value);
+  colorPick(event) {
+    // console.log(event.target.value)
+    this.currentColor = event.target.value;
+    this.data.changePencilColor(event.target.value);
   }
-  saveImageEvent(){
+  saveImageEvent() {
     this.saveImage.emit('save');
   }
-  chooseTool(event){
+  chooseTool(event) {
     let toolsOption = document.querySelectorAll('.tool-option');
-    toolsOption.forEach((item)=>{
+    toolsOption.forEach((item) => {
       console.log(item)
       item.classList.remove('active')
     });
     event.target.classList.add('active')
-   this.data.changeToolOption(event.target.alt);
-  
+    this.data.changeToolOption(event.target.alt);
+
   }
-  noAction(){
+  noAction() {
     alert('no event yet!');
+  }
+  toolTips() {
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new Bootstrap.Tooltip(tooltipTriggerEl)
+    })
   }
 }

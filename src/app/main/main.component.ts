@@ -124,43 +124,36 @@ export class MainComponent implements OnInit, OnChanges {
     this.boundings = this.canvas.getBoundingClientRect();
     //mouseDown
     this.canvas.addEventListener('mousedown', (event) => {
-
-      //  console.log(this.lineWidth)
       this.setMouseCoordinates(event);
       this.isDrawing = true;
       this.ctx.beginPath();
-      console.log(this.toolOption)
+      // console.log(this.toolOption)
       switch (this.toolOption.toString()) {
-        case "1":{
+        case "1": {
           this.ctx.globalCompositeOperation = 'source-over';
           this.ctx.moveTo(this.mouseX, this.mouseY);
           break;
         }
-        case "2":{
+        case "2": {
           this.ctx.globalCompositeOperation = 'xor';
-            this.fillColor();
+          this.fillColor();
           break;
         }
-        case "3":{
-         
+        case "3": {
+
           break;
         }
-        case "4":{
-         // this.canvas.style.cursor=' url(assets/eraser.png)';
+        case "4": {
+          // this.canvas.style.cursor=' url(assets/eraser.png)';
           this.ctx.globalCompositeOperation = 'destination-out';
           this.ctx.arc(this.mouseX, this.mouseY, this.lineWidth, 0, 2 * Math.PI);
           this.ctx.fill();
           break;
         }
-        default :{
+        default: {
           break;
         }
       }
-
-      // Start Drawing
-
-
-      // this.fillColor();
     });
     //mouseMove
     this.canvas.addEventListener('mousemove', (event) => {
@@ -168,27 +161,27 @@ export class MainComponent implements OnInit, OnChanges {
       this.ctx.strokeStyle = this.strokeColor;
       this.setMouseCoordinates(event);
       switch (this.toolOption.toString()) {
-        case "1":{
+        case "1": {
           if (this.isDrawing) {
             this.ctx.lineTo(this.mouseX, this.mouseY);
             this.ctx.stroke();
           }
-            this.canvas.style.cursor=" url('/assets/pencil.png') , default ";
-            break;
-        }
-        case "2":{
-          this.canvas.style.cursor=" url('/assets/fill_color.png') , default ";
+          this.canvas.style.cursor = " url('/assets/pencil.png') , default ";
           break;
         }
-        case "3" :{
-          this.canvas.style.cursor=" text ";
+        case "2": {
+          this.canvas.style.cursor = " url('/assets/fill_color.png') , default ";
           break;
         }
-        case "4":{
-          this.canvas.style.cursor=" url('/assets/eraser.png') , default ";
+        case "3": {
+          this.canvas.style.cursor = " text ";
           break;
         }
-        default :{
+        case "4": {
+          this.canvas.style.cursor = " url('/assets/eraser.png') , default ";
+          break;
+        }
+        default: {
           break;
         }
       }
@@ -211,6 +204,6 @@ export class MainComponent implements OnInit, OnChanges {
     this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
 
   }
- 
+
 }
 
